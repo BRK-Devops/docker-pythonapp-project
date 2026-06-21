@@ -1,0 +1,69 @@
+services:
+  database:
+    image: brkdockerhub/pyapp:database-image
+    deploy:
+      replicas: 1
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=course_user
+      - POSTGRES_PASSWORD=course_pass
+      - POSTGRES_DB=course_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  auth:
+    image: brkdockerhub/pyapp:auth-image
+    deploy:
+      replicas: 2
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=postgresql://course_user:course_pass@database:5432/course_db
+    networks:
+      - mynetwork
+
+  courselist:
+    image: brkdockerhub/pyapp:courselist-image
+    deploy:
+      replicas: 2
+    ports:
+      - "5002:5002"
+    environment:
+      - DATABASE_URL=postgresql://course_user:course_pass@database:5432/course_db
+    networks:
+      - mynetwork
+
+  borrow:
+    image: brkdockerhub/pyapp:borrow-image
+    deploy:
+      replicas: 2
+    ports:
+      - "5003:5003"
+    environment:
+      - DATABASE_URL=postgresql://course_user:course_pass@database:5432/course_db
+    networks:
+      - mynetwork
+
+  frontend:
+    image: brkdockerhub/pyapp:frontend-image
+    deploy:
+      replicas: 3
+    ports:
+      - "5000:5000"
+    environment:
+      - AUTH_SERVICE=http://auth:5001
+      - COURSE_SERVICE=http://courselist:5002
+      - BORROW_SERVICE=http://borrow:5003
+      - SECRET_KEY=your-secret-key-change-in-production
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: overlay
+
+volumes:
+  postgres_data:
