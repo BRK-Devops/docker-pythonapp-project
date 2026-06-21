@@ -1,6 +1,6 @@
 services:
   database:
-    image: brkdockerhub/pyapp:database-image
+    image: brkdockerhub/coursesite:database-img database
     deploy:
       replicas: 1
     ports:
@@ -15,7 +15,7 @@ services:
       - mynetwork
 
   auth:
-    image: brkdockerhub/pyapp:auth-image
+    image: brkdockerhub/coursesite:auth-img
     deploy:
       replicas: 2
     ports:
@@ -26,7 +26,7 @@ services:
       - mynetwork
 
   courselist:
-    image: brkdockerhub/pyapp:courselist-image
+    image: brkdockerhub/coursesite:courselist-img
     deploy:
       replicas: 2
     ports:
@@ -37,7 +37,7 @@ services:
       - mynetwork
 
   borrow:
-    image: brkdockerhub/pyapp:borrow-image
+    image: brkdockerhub/coursesite:borrow-img
     deploy:
       replicas: 2
     ports:
@@ -48,7 +48,7 @@ services:
       - mynetwork
 
   frontend:
-    image: brkdockerhub/pyapp:frontend-image
+    image: brkdockerhub/coursesite:frontend-img 
     deploy:
       replicas: 3
     ports:
