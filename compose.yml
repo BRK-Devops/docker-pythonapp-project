@@ -1,6 +1,6 @@
 services:
   database:
-    image: brkdockerhub/coursesite:database-img database
+    image: brkdockerhub/coursesite:database-img 
     deploy:
       replicas: 1
     ports:
