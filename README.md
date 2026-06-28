@@ -1,6 +1,6 @@
 # 📚 CourseHub → LearnWithUs | Python DevOps Project
 
-> A full-stack Python web application deployed using a production-grade DevOps pipeline with Docker Swarm, Jenkins CI/CD, SonarQube code quality analysis, Trivy image scanning, and PostgreSQL — iteratively evolved from **v1 (CourseHub)** to **v2 (LearnWithUs)**.
+> A full-stack Python web application deployed using a production-grade DevOps pipeline with Docker Stack, Jenkins CI/CD, SonarQube code quality analysis, Trivy image scanning, and PostgreSQL — iteratively evolved from **v1 (CourseHub)** to **v2 (LearnWithUs)**.
 
 ---
 
@@ -37,21 +37,128 @@ GitHub → Jenkins CI/CD → SonarQube (QA) → Docker Build → Trivy Scan → 
 
 ## 📊 Real Metrics Achieved
 
+### 🔍 SonarQube Code Quality (myproject · branch: main · analysed June 21, 2026 at 3:44 PM)
+
+| Metric | Value | Rating |
+|---|---|---|
+| **Quality Gate Status** | ✅ Passed — All conditions met | — |
+| **Bugs** | 0 | 🟢 A |
+| **Vulnerabilities** | 0 | 🟢 A |
+| **Security Hotspots** | 18 (0.0% reviewed) | 🔴 C |
+| **Technical Debt** | 22 min | 🟢 A |
+| **Code Smells** | 4 | 🟢 A |
+| **Code Coverage** | 0.0% | 🔴 C|
+| **Lines to Cover** | 305 | — |
+| **Unit Tests** | 0 | — |
+| **Duplications** | 0.0% | 🟢 A |
+| **Duplicated Blocks** | 0 | — |
+| **Total Lines Analysed** | 900 | — |
+
+---
+
+### 🐳 Docker Hub Registry (brkdockerhub/coursesite)
+
 | Metric | Value |
 |---|---|
-| **SonarQube Quality Gate** | ✅ Passed — All conditions met |
-| **Bugs** | 0 |
-| **Vulnerabilities** | 0 |
-| **Code Smells** | 4 |
-| **Technical Debt** | 22 min |
-| **Security Hotspots** | 18 (flagged for review) |
-| **Lines to Cover** | 305 |
-| **Total Lines** | 900 |
-| **Docker Images Built & Pushed** | 5 images |
-| **Docker Hub Repo Size** | 193.1 MB |
+| **Total Images Pushed** | 5 images (auth-img, borrow-img, courselist-img, database-img, frontend-img) |
+| **Repository Size** | 193.1 MB |
+| **Total Pulls** | 40 |
+| **OS / Architecture** | Linux (all 5 images) |
+| **Last Push Time** | < 1 day (all 5 images pushed in same pipeline run) |
+| **Docker Hub Repo** | `brkdockerhub/coursesite` |
+
+---
+
+### 🗄️ PostgreSQL Live Database Metrics
+
+| Metric | Value |
+|---|---|
+| **PostgreSQL Version** | 15.18 |
+| **Database Name** | `course_db` |
+| **DB User** | `course_user` |
+| **Total Users** | 1 |
+| **Username** | `rohit` |
+| **User Email** | `rohit@gmail.com` |
+| **Password Algorithm** | PBKDF2:SHA256 — 600,000 rounds |
+| **Account Created** | 2026-06-21 05:23:13.952269 |
+| **Account Active** | `true` |
 | **Total Courses Seeded** | 8 |
+| **Total Borrow Records** | 2 (in v1 session) |
+| **Borrow Record 1** | course_id=1 (DevOps Multi-Cloud) · borrowed 2026-06-21 05:23:54 · due 2026-07-21 |
+| **Borrow Record 2** | course_id=5 (Prompt Engineering) · borrowed 2026-06-21 05:24:05 · due 2026-07-21 |
+| **Borrow Status** | `borrowed` (both records) |
+| **Due Date Window** | 30 days from borrow timestamp |
+| **DB Container Image** | `brkdockerhub/pyapp:database-image` |
+| **DB Container ID** | `989be1c9029c` |
 | **DB Tables** | `users`, `courses`, `borrowed_courses` |
-| **Users in DB** | 1 (rohit — password hashed with PBKDF2:SHA256:600000 rounds) |
+
+---
+
+### 📚 Courses Database — All 8 Seeded Courses
+
+| ID | Course Name | Duration | Level | Category |
+|---|---|---|---|---|
+| 1 | DevOps Multi-Cloud (AWS & Azure) | 8 Weeks | Intermediate | Cloud Computing |
+| 2 | Data Analytics | 6 Weeks | Beginner | Data Science |
+| 3 | Data Engineering | 10 Weeks | Advanced | Data Science |
+| 4 | Generative AI (Gen AI) | 6 Weeks | Intermediate | Artificial Intelligence |
+| 5 | Prompt Engineering | 4 Weeks | Beginner | (AI/ML) |
+| 6 | JAVA Fullstack | 10 Weeks | Intermediate | Web Development |
+| 7 | Python Fullstack | 8 Weeks | Intermediate | Web Development |
+| 8 | SQL (Basics to Professional) | 6 Weeks | Beginner to Advanced | Database |
+
+---
+
+### 🖥️ AWS EC2 Infrastructure
+
+| Metric | Value |
+|---|---|
+| **Region** | us-east-1 |
+| **v1 Instance IP** | 54.145.63.245 |
+| **v2 Instance IP** | 52.23.201.97 |
+| **App Port** | 5000 |
+| **Jenkins Port** | 8080 |
+| **SonarQube Port** | 9000 |
+| **Jenkins Manager IP** | 100.27.192.134 |
+| **Jenkins Agent Label** | `prod` |
+
+---
+
+### 📈 Application Metrics (v1 — CourseHub)
+
+| Metric | Value |
+|---|---|
+| **Total Courses** | 8 |
+| **Borrowed (peak session)** | 3 |
+| **Available** | 5 |
+| **Due Date** | 2026-07-21 (30 days from borrow) |
+
+### 📈 Application Metrics (v2 — LearnWithUs)
+
+| Metric | Value |
+|---|---|
+| **Total Courses** | 8 |
+| **Borrowed** | 2 (DevOps Multi-Cloud + Generative AI) |
+| **Available** | 6 |
+| **"Borrowed by someone" badges** | Shown to other users in real-time |
+| **Due Date** | 2026-07-21 (same 30-day window) |
+
+---
+
+### 🔧 Jenkins Pipeline
+
+| Metric | Value |
+|---|---|
+| **Pipeline Name** | Prod-Deployment |
+| **Pipeline Type** | Declarative (Groovy) |
+| **Total Stages** | 6 |
+| **Source Branch** | `main` |
+| **GitHub Repo** | `BRK-Devops/docker-pythonapp-project` |
+| **SonarQube Tool Name** | `mysonar` |
+| **SonarQube Project Key** | `myproject` |
+| **Docker Registry Credential ID** | `1543663c-f9c5-426c-9f86-93cb36d5210c` |
+| **Stack Name** | `courselist` |
+| **Compose File** | `compose.yml` |
 
 ---
 
@@ -109,10 +216,17 @@ Initial release with core borrowing functionality.
 
 ---
 
-**PostgreSQL — Database Tables**
+**PostgreSQL — Users & Borrowed Courses Tables**
+> 📎 `DB-1.png` already uploaded ✅
+
+![DB - Users and Borrowed Tables](DB-1.png)
+
+---
+
+**PostgreSQL — Courses Table**
 > 📎 `db-2.png` already uploaded ✅
 
-![DB - Database Tables](db-2.png)
+![DB - Courses Table](db-2.png)
 
 #### v1 Dashboard Stats
 - Total Courses: **8**
@@ -300,6 +414,20 @@ SELECT * FROM borrowed_courses;
 - 8 seeded courses across categories: Cloud Computing, Data Science, AI, Web Development, Database
 - Borrow records with `due_date` auto-set to 30 days from borrow time
 
+### 📸 Live Database Screenshots
+
+**Users & Borrowed Courses Tables**
+
+> 📎 Already uploaded — [`DB-1.png`](https://github.com/BRK-Devops/docker-pythonapp-project/upload/main) · To re-upload or replace: go to your repo → **Add file → Upload files** → drop `DB-1.png` → commit
+
+![DB-1 - Users and Borrowed Tables](DB-1.png)
+
+**Courses Table (Full)**
+
+> 📎 Already uploaded — [`db-2.png`](https://github.com/BRK-Devops/docker-pythonapp-project/upload/main) · To re-upload or replace: go to your repo → **Add file → Upload files** → drop `db-2.png` → commit
+
+![db-2 - Courses Table](db-2.png)
+
 ---
 
 ## 📂 Project Structure
@@ -364,36 +492,8 @@ open http://localhost:5000
 
 ---
 
-## 📸 Screenshot Upload Status
-
-All images are uploaded to the **root** of this repo and are now live ✅
-
-| # | Filename | Section | Status |
-|---|---|---|---|
-| 1 | `loginpage-coursehub.png` | v1 — CourseHub Login | ✅ Uploaded |
-| 2 | `homepage-coursehub.png` | v1 — CourseHub Dashboard | ✅ Uploaded |
-| 3 | `courses-coursehub.png` | v1 — Available Courses | ✅ Uploaded |
-| 4 | `borrowedcourses-coursehub.png` | v1 — Borrowed Courses | ✅ Uploaded |
-| 5 | `db-2.png` | PostgreSQL — Database Tables | ✅ Uploaded |
-| 6 | `loginpage-learnwithus.png` | v2 — LearnWithUs Login | ✅ Uploaded |
-| 7 | `homepage-learnwithus.png` | v2 — LearnWithUs Dashboard | ✅ Uploaded |
-| 8 | `borrowedcourses-learnwithus.png` | v2 — Borrowed Courses | ✅ Uploaded |
-| 9 | `availblecourses-learnwithus.png` | v2 — Available Courses with badges | ✅ Uploaded |
-| 10 | `sonarqube.png` | SonarQube Quality Gate report | ✅ Uploaded |
-| 11 | `dockerhub.png` | Docker Hub — 5 image tags | ✅ Uploaded |
-| 12 | `pipelinescript-1.png` | Jenkins pipeline script (top) | ✅ Uploaded |
-| 13 | `pipelinescript-2.png` | Jenkins pipeline script (bottom) | ✅ Uploaded |
-
----
-
-## 🔗 Links
-
-- **Docker Hub:** https://hub.docker.com/repository/docker/brkdockerhub/coursesite/general
-- **GitHub Repo:** https://github.com/BRK-Devops/docker-pythonapp-project
-
----
 
 ## 👤 Author
 
-**Rohit** | DevOps Engineer  
+**Behara Rohit Kumar** | Software Engineer - DevOps  
 Built with 🐍 Python · 🐳 Docker · ⚙️ Jenkins · 🔍 SonarQube · 🛡️ Trivy · ☁️ AWS EC2
