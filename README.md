@@ -82,44 +82,37 @@ Initial release with core borrowing functionality.
 #### 📸 Screenshots
 
 **Login Page**
-> 📎 [Click here to upload `loginpage-coursehub.png`](../../upload/files)
+> 📎 `loginpage-coursehub.png` already uploaded ✅
 
-![CourseHub - Login](screenshots/loginpage-coursehub.png)
+![CourseHub - Login](loginpage-coursehub.png)
 
 ---
 
 **Dashboard / Homepage**
-> 📎 [Click here to upload `homepage-coursehub.png`](../../upload/files)
+> 📎 `homepage-coursehub.png` already uploaded ✅
 
-![CourseHub - Dashboard](screenshots/homepage-coursehub.png)
+![CourseHub - Dashboard](homepage-coursehub.png)
 
 ---
 
 **Available Courses Page**
-> 📎 [Click here to upload `courses-coursehub.png`](../../upload/files)
+> 📎 `courses-coursehub.png` already uploaded ✅
 
-![CourseHub - Available Courses](screenshots/courses-coursehub.png)
+![CourseHub - Available Courses](courses-coursehub.png)
 
 ---
 
 **My Borrowed Courses**
-> 📎 [Click here to upload `borrowedcourses-coursehub.png`](../../upload/files)
+> 📎 `borrowedcourses-coursehub.png` already uploaded ✅
 
-![CourseHub - Borrowed Courses](screenshots/borrowedcourses-coursehub.png)
-
----
-
-**PostgreSQL — Users & Borrowed Courses Tables**
-> 📎 [Click here to upload `DB-1.png`](../../upload/files)
-
-![DB - Users and Borrowed Tables](screenshots/DB-1.png)
+![CourseHub - Borrowed Courses](borrowedcourses-coursehub.png)
 
 ---
 
-**PostgreSQL — Courses Table**
-> 📎 [Click here to upload `db-2.png`](../../upload/files)
+**PostgreSQL — Database Tables**
+> 📎 `db-2.png` already uploaded ✅
 
-![DB - Courses Table](screenshots/db-2.png)
+![DB - Database Tables](db-2.png)
 
 #### v1 Dashboard Stats
 - Total Courses: **8**
@@ -141,30 +134,30 @@ Rebranded and improved version with updated UI and shared borrowing state visibl
 #### 📸 Screenshots
 
 **Login Page**
-> 📎 [Click here to upload `loginpage-learnwithus.png`](../../upload/files)
+> 📎 `loginpage-learnwithus.png` already uploaded ✅
 
-![LearnWithUs - Login](screenshots/loginpage-learnwithus.png)
+![LearnWithUs - Login](loginpage-learnwithus.png)
 
 ---
 
 **Dashboard / Homepage**
-> 📎 [Click here to upload `homepage-learnwithus.png`](../../upload/files)
+> 📎 `homepage-learnwithus.png` already uploaded ✅
 
-![LearnWithUs - Dashboard](screenshots/homepage-learnwithus.png)
+![LearnWithUs - Dashboard](homepage-learnwithus.png)
 
 ---
 
 **My Borrowed Courses**
-> 📎 [Click here to upload `borrowedcourses-learnwithus.png`](../../upload/files)
+> 📎 `borrowedcourses-learnwithus.png` already uploaded ✅
 
-![LearnWithUs - Borrowed](screenshots/borrowedcourses-learnwithus.png)
+![LearnWithUs - Borrowed](borrowedcourses-learnwithus.png)
 
 ---
 
 **Available Courses (with "Borrowed by someone" badges)**
-> 📎 [Click here to upload `availblecourses-learnwithus.png`](../../upload/files)
+> 📎 `availblecourses-learnwithus.png` already uploaded ✅
 
-![LearnWithUs - Available Courses with badges](screenshots/availblecourses-learnwithus.png)
+![LearnWithUs - Available Courses with badges](availblecourses-learnwithus.png)
 
 #### v2 Dashboard Stats
 - Total Courses: **8**
@@ -175,9 +168,9 @@ Rebranded and improved version with updated UI and shared borrowing state visibl
 
 ## 🔍 SonarQube Code Quality Report
 
-> 📎 [Click here to upload `sonarqube.png`](../../upload/files)
+> 📎 `sonarqube.png` already uploaded ✅
 
-![SonarQube - Quality Gate Passed](screenshots/sonarqube.png)
+![SonarQube - Quality Gate Passed](sonarqube.png)
 
 - **Quality Gate: PASSED ✅**
 - Project: `myproject` | Branch: `main`
@@ -189,9 +182,9 @@ Rebranded and improved version with updated UI and shared borrowing state visibl
 
 ## 🐳 Docker Hub Registry
 
-> 📎 [Click here to upload `dockerhub.png`](../../upload/files)
+> 📎 `dockerhub.png` already uploaded ✅
 
-![Docker Hub - coursesite repository](screenshots/dockerhub.png)
+![Docker Hub - coursesite repository](dockerhub.png)
 
 **Repository:** [`brkdockerhub/coursesite`](https://hub.docker.com/repository/docker/brkdockerhub/coursesite/general)
 
@@ -209,13 +202,13 @@ Rebranded and improved version with updated UI and shared borrowing state visibl
 
 ## 🧾 Jenkins Pipeline Script
 
-> 📎 [Click here to upload `pipelinescript-1.png`](../../upload/files)
+> 📎 `pipelinescript-1.png` already uploaded ✅
 
-![Jenkins Pipeline - Part 1](screenshots/pipelinescript-1.png)
+![Jenkins Pipeline - Part 1](pipelinescript-1.png)
 
-> 📎 [Click here to upload `pipelinescript-2.png`](../../upload/files)
+> 📎 `pipelinescript-2.png` already uploaded ✅
 
-![Jenkins Pipeline - Part 2](screenshots/pipelinescript-2.png)
+![Jenkins Pipeline - Part 2](pipelinescript-2.png)
 
 ```groovy
 pipeline {
@@ -371,31 +364,25 @@ open http://localhost:5000
 
 ---
 
-## 📸 Screenshot Upload Checklist
+## 📸 Screenshot Upload Status
 
-To activate all images in this README, create a `screenshots/` folder in your repo root and upload each file with the **exact filename** listed below:
+All images are uploaded to the **root** of this repo and are now live ✅
 
-| # | Filename (exact) | Section it appears in |
-|---|---|---|
-| 1 | `loginpage-coursehub.png` | v1 — CourseHub Login |
-| 2 | `homepage-coursehub.png` | v1 — CourseHub Dashboard |
-| 3 | `courses-coursehub.png` | v1 — Available Courses |
-| 4 | `borrowedcourses-coursehub.png` | v1 — Borrowed Courses |
-| 5 | `DB-1.png` | PostgreSQL Users & Borrowed tables |
-| 6 | `db-2.png` | PostgreSQL Courses table |
-| 7 | `loginpage-learnwithus.png` | v2 — LearnWithUs Login |
-| 8 | `homepage-learnwithus.png` | v2 — LearnWithUs Dashboard |
-| 9 | `borrowedcourses-learnwithus.png` | v2 — Borrowed Courses |
-| 10 | `availblecourses-learnwithus.png` | v2 — Available Courses with badges |
-| 11 | `sonarqube.png` | SonarQube Quality Gate report |
-| 12 | `dockerhub.png` | Docker Hub — 5 image tags |
-| 13 | `pipelinescript-1.png` | Jenkins pipeline script (top) |
-| 14 | `pipelinescript-2.png` | Jenkins pipeline script (bottom) |
-
-**Steps:**
-1. Go to your GitHub repo → click **Add file → Upload files**
-2. Create path `screenshots/` and drag all 14 files in
-3. Commit — all images will render instantly in this README
+| # | Filename | Section | Status |
+|---|---|---|---|
+| 1 | `loginpage-coursehub.png` | v1 — CourseHub Login | ✅ Uploaded |
+| 2 | `homepage-coursehub.png` | v1 — CourseHub Dashboard | ✅ Uploaded |
+| 3 | `courses-coursehub.png` | v1 — Available Courses | ✅ Uploaded |
+| 4 | `borrowedcourses-coursehub.png` | v1 — Borrowed Courses | ✅ Uploaded |
+| 5 | `db-2.png` | PostgreSQL — Database Tables | ✅ Uploaded |
+| 6 | `loginpage-learnwithus.png` | v2 — LearnWithUs Login | ✅ Uploaded |
+| 7 | `homepage-learnwithus.png` | v2 — LearnWithUs Dashboard | ✅ Uploaded |
+| 8 | `borrowedcourses-learnwithus.png` | v2 — Borrowed Courses | ✅ Uploaded |
+| 9 | `availblecourses-learnwithus.png` | v2 — Available Courses with badges | ✅ Uploaded |
+| 10 | `sonarqube.png` | SonarQube Quality Gate report | ✅ Uploaded |
+| 11 | `dockerhub.png` | Docker Hub — 5 image tags | ✅ Uploaded |
+| 12 | `pipelinescript-1.png` | Jenkins pipeline script (top) | ✅ Uploaded |
+| 13 | `pipelinescript-2.png` | Jenkins pipeline script (bottom) | ✅ Uploaded |
 
 ---
 
